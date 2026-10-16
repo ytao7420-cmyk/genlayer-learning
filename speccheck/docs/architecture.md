@@ -100,7 +100,21 @@ The request read-back records `SELECTED` and `selected_offer_id: demo-offer-matc
 
 The buyer (`0x69Cf4B8fD63208716E0e81B0CC5e09c7b9e8aD69`) and quotation submitter (`0x2366540667c280cDBE438D63a8156f3b5ebCD72B`) are both project-controlled auxiliary wallets. Their labels and offers are synthetic. Neither is an independent customer, commercial supplier, or external evaluator.
 
-Source: [genlayer-learning/speccheck](https://github.com/ytao7420-cmyk/genlayer-learning/tree/main/speccheck). Expected website: [SpecCheck](https://speccheck-genlayer-57.sales136152.chatgpt.site), with publication and browser verification pending in this document.
+Source: [genlayer-learning/speccheck](https://github.com/ytao7420-cmyk/genlayer-learning/tree/main/speccheck). Published website: [SpecCheck](https://speccheck-genlayer-57.sales136152.chatgpt.site).
+
+## Browser QA
+
+The published website loaded successfully in Google Chrome and displayed the three recorded offers. A separate real MetaMask workflow completed request creation, offer submission, consensus review, and selection. The interface reported successful execution and contract state read-back, then showed the request closed after selection.
+
+This browser check used the user's deployment wallet, `0xcd1DabF73cC80EDeE8BA664c34A5d636b6e407f9`, for both buyer and quotation-submitter roles. It is a project-operated functional check with a single wallet, separate from the archive's two project-controlled auxiliary wallets. Neither test establishes independent customer or supplier participation.
+
+| Browser action | Captured transaction hash |
+| --- | --- |
+| Submit offer | `0x9f509e38f7c8a2c41e49b252ab0d626890c08eedf57306cc6344e1a10b35cae4` |
+| Evaluate offer | `0xdb0a294bb37c881464c25624ed1b30c21f08a221b3f1d4e4f09285ba6aef0c6a` |
+| Select offer | `0xb5c04584fa796cc15eae5f69d053b87687c6794ccd5491f93984caf67bdc7c5c` |
+
+Request creation also completed, but its hash is not included in this captured list. The browser result establishes the observed execution and read-back; this record does not assign a `FINALIZED` status to those transactions. The archive's earlier lifecycle statuses remain as originally recorded.
 
 ## Limits
 

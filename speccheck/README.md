@@ -26,7 +26,9 @@ The **Live** interface reads the configured contract. **Recorded demo** reads th
 
 Source: [ytao7420-cmyk/genlayer-learning/speccheck](https://github.com/ytao7420-cmyk/genlayer-learning/tree/main/speccheck).
 
-Expected website: [SpecCheck](https://speccheck-genlayer-57.sales136152.chatgpt.site). **Publication and browser verification are pending** in this documentation; the URL alone is not evidence of a working hosted application.
+Published website: [SpecCheck](https://speccheck-genlayer-57.sales136152.chatgpt.site). Its public load was verified in Google Chrome, including all three recorded offers. A separate live Chrome/MetaMask check completed request creation, offer submission, consensus review, and selection; the UI reported successful execution and state read-back, and the request closed after selection.
+
+That browser check used the user's deployment wallet for both buyer and quotation-submitter roles. It is a project-operated functional check, not evidence of independent counterparties or customers. The [browser QA record](docs/architecture.md#browser-qa) lists the captured transaction hashes separately from the two-wallet archive above.
 
 ## Run locally on Windows
 
