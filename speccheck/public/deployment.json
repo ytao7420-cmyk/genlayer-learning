@@ -1,0 +1,12 @@
+{
+  "network": "GenLayer Studionet",
+  "chainId": 61999,
+  "address": "0x14664A4ABB0582398F8E9a97ce519BA8b57b98Ed",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "rpc": "https://studio.genlayer.com/api",
+  "deployed": true,
+  "deployer": "0xcd1DabF73cC80EDeE8BA664c34A5d636b6e407f9",
+  "deploymentTransaction": "0x0df988810956c09143c4b35675c7353d9e9ec5dd1bdd2f2e291b09ef60649d49",
+  "deploymentStatus": "FINALIZED",
+  "sourceSha256": "53fbdd786e163e1afb6d3aa0415406f00312a47dbb5daf84c4f6f1f5934fcdaf"
+}

@@ -1,0 +1,295 @@
+{
+  "network": "GenLayer Studionet",
+  "chainId": 61999,
+  "contractAddress": "0x14664A4ABB0582398F8E9a97ce519BA8b57b98Ed",
+  "recordedAt": "2026-10-16T21:02:38.477Z",
+  "notice": "Public synthetic examples. Both auxiliary test wallets are controlled by this project; they are not customers. Results verify submitted text only, not actual goods or supplier identity.",
+  "actors": {
+    "buyer": "0x69Cf4B8fD63208716E0e81B0CC5e09c7b9e8aD69",
+    "supplier": "0x2366540667c280cDBE438D63a8156f3b5ebCD72B"
+  },
+  "requests": [
+    {
+      "buyer": "0x69Cf4B8fD63208716E0e81B0CC5e09c7b9e8aD69",
+      "id": "demo-rfq-industrial-usb-hub-v1",
+      "requirements": [
+        "The hub must have four USB-A data ports.",
+        "The enclosure must be metal.",
+        "The supplier must provide a warranty of at least 24 months."
+      ],
+      "selected_offer_id": "demo-offer-match-v1",
+      "status": "SELECTED",
+      "title": "Industrial USB hub — public synthetic RFQ"
+    }
+  ],
+  "offers": [
+    {
+      "digest": "826bcbf181d302957180f76cb09c915fefa09ce69a45df9b04528bdfdb11dc67",
+      "evidence": "Product: industrial desktop USB hub.\nConnectivity: four USB-A data ports.\nEnclosure: aluminum metal housing.\nWarranty: 24 months provided by the supplier.",
+      "id": "demo-offer-match-v1",
+      "items": [
+        {
+          "quote": "Connectivity: four USB-A data ports.",
+          "reason": "Evidence line 2 explicitly states four USB-A data ports.",
+          "requirement_id": 1,
+          "status": "MATCH"
+        },
+        {
+          "quote": "Enclosure: aluminum metal housing.",
+          "reason": "Evidence line 3 explicitly states an aluminum metal housing.",
+          "requirement_id": 2,
+          "status": "MATCH"
+        },
+        {
+          "quote": "Warranty: 24 months provided by the supplier.",
+          "reason": "Evidence line 4 explicitly states a 24-month warranty provided by the supplier.",
+          "requirement_id": 3,
+          "status": "MATCH"
+        }
+      ],
+      "request_id": "demo-rfq-industrial-usb-hub-v1",
+      "status": "EVALUATED",
+      "submitter": "0x2366540667c280cDBE438D63a8156f3b5ebCD72B",
+      "supplier_label": "Sample A · complete offer",
+      "verdict": "COMPATIBLE",
+      "evaluation_hash": "0x2d6655e7007cc2482994a4b70fa32bbc0f925b13e8c6199a02e6453103afa415"
+    },
+    {
+      "digest": "7b756d9565d2948856394c178eccd4e3c5cf97908a265636da798417e3ca48bb",
+      "evidence": "Product: industrial desktop USB hub.\nConnectivity: four USB-A data ports.\nEnclosure: plastic housing, not metal.\nWarranty: 24 months provided by the supplier.",
+      "id": "demo-offer-conflict-v1",
+      "items": [
+        {
+          "quote": "Connectivity: four USB-A data ports.",
+          "reason": "Quotation states there are four USB-A data ports.",
+          "requirement_id": 1,
+          "status": "MATCH"
+        },
+        {
+          "quote": "Enclosure: plastic housing, not metal.",
+          "reason": "Quotation states the enclosure is plastic, not metal.",
+          "requirement_id": 2,
+          "status": "MISMATCH"
+        },
+        {
+          "quote": "Warranty: 24 months provided by the supplier.",
+          "reason": "Quotation states the supplier provides a 24-month warranty, meeting the minimum.",
+          "requirement_id": 3,
+          "status": "MATCH"
+        }
+      ],
+      "request_id": "demo-rfq-industrial-usb-hub-v1",
+      "status": "EVALUATED",
+      "submitter": "0x2366540667c280cDBE438D63a8156f3b5ebCD72B",
+      "supplier_label": "Sample B · explicit conflict",
+      "verdict": "INCOMPATIBLE",
+      "evaluation_hash": "0x81f07e47ff880397ec975b4d44078103f5dfa518df5bd25aa6f54bd5e0e5a63c"
+    },
+    {
+      "digest": "35351540181f44468a271b7b2581b7076299657881f6b600ca49e56b5a449af0",
+      "evidence": "Product: industrial desktop USB hub.\nConnectivity: four USB-A data ports.\nEnclosure: aluminum metal housing.\nShipping: standard export packaging.",
+      "id": "demo-offer-missing-v1",
+      "items": [
+        {
+          "quote": "Connectivity: four USB-A data ports.",
+          "reason": "Evidence explicitly states four USB-A data ports, matching the requirement.",
+          "requirement_id": 1,
+          "status": "MATCH"
+        },
+        {
+          "quote": "Enclosure: aluminum metal housing.",
+          "reason": "Evidence explicitly states aluminum metal housing, satisfying the metal enclosure requirement.",
+          "requirement_id": 2,
+          "status": "MATCH"
+        },
+        {
+          "quote": "",
+          "reason": "No warranty information is provided in the quotation evidence.",
+          "requirement_id": 3,
+          "status": "NOT_STATED"
+        }
+      ],
+      "request_id": "demo-rfq-industrial-usb-hub-v1",
+      "status": "EVALUATED",
+      "submitter": "0x2366540667c280cDBE438D63a8156f3b5ebCD72B",
+      "supplier_label": "Sample C · missing warranty",
+      "verdict": "INCOMPLETE",
+      "evaluation_hash": "0xc69ad4384bc385e18b3b2605419a4d426c56c58b872fd52b77ad89af8c572a1f"
+    }
+  ],
+  "transactions": [
+    {
+      "label": "Create immutable RFQ",
+      "hash": "0xd7bc6752032b31cfdec16719e6ee109fd9a4a256a2012e41449eff31cf259790",
+      "method": "create_request",
+      "args": [
+        "demo-rfq-industrial-usb-hub-v1",
+        "Industrial USB hub — public synthetic RFQ",
+        "[\"The hub must have four USB-A data ports.\",\"The enclosure must be metal.\",\"The supplier must provide a warranty of at least 24 months.\"]"
+      ],
+      "status": "FINALIZED",
+      "actor": "0x69Cf4B8fD63208716E0e81B0CC5e09c7b9e8aD69",
+      "execution": "SUCCESS",
+      "votes": {
+        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "idle",
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "idle"
+      },
+      "leaderOnly": false,
+      "createdAt": "2026-10-16T21:00:35.204053+00:00"
+    },
+    {
+      "label": "Submit demo-offer-match-v1",
+      "hash": "0xb2a637492aa88244c9ba4b4b0fb155e7a89355c569a6b1d64468c43423eedc08",
+      "method": "submit_offer",
+      "args": [
+        "demo-offer-match-v1",
+        "demo-rfq-industrial-usb-hub-v1",
+        "Sample A · complete offer",
+        "Product: industrial desktop USB hub.\nConnectivity: four USB-A data ports.\nEnclosure: aluminum metal housing.\nWarranty: 24 months provided by the supplier."
+      ],
+      "status": "FINALIZED",
+      "actor": "0x2366540667c280cDBE438D63a8156f3b5ebCD72B",
+      "execution": "SUCCESS",
+      "votes": {
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "agree",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "idle",
+        "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "idle"
+      },
+      "leaderOnly": false,
+      "createdAt": "2026-10-16T21:00:44.590908+00:00"
+    },
+    {
+      "label": "Evaluate demo-offer-match-v1",
+      "hash": "0x2d6655e7007cc2482994a4b70fa32bbc0f925b13e8c6199a02e6453103afa415",
+      "method": "evaluate_offer",
+      "args": [
+        "demo-offer-match-v1"
+      ],
+      "status": "FINALIZED",
+      "actor": "0x69Cf4B8fD63208716E0e81B0CC5e09c7b9e8aD69",
+      "execution": "SUCCESS",
+      "votes": {
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "idle",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "idle",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
+      },
+      "leaderOnly": false,
+      "createdAt": "2026-10-16T21:00:53.812789+00:00"
+    },
+    {
+      "label": "Submit demo-offer-conflict-v1",
+      "hash": "0xb45fde552617ab91545a2c95ea81cf3967325df5329ae92e25c8e0b11c74ee6f",
+      "method": "submit_offer",
+      "args": [
+        "demo-offer-conflict-v1",
+        "demo-rfq-industrial-usb-hub-v1",
+        "Sample B · explicit conflict",
+        "Product: industrial desktop USB hub.\nConnectivity: four USB-A data ports.\nEnclosure: plastic housing, not metal.\nWarranty: 24 months provided by the supplier."
+      ],
+      "status": "FINALIZED",
+      "actor": "0x2366540667c280cDBE438D63a8156f3b5ebCD72B",
+      "execution": "SUCCESS",
+      "votes": {
+        "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb": "agree",
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
+      },
+      "leaderOnly": false,
+      "createdAt": "2026-10-16T21:01:17.625232+00:00"
+    },
+    {
+      "label": "Evaluate demo-offer-conflict-v1",
+      "hash": "0x81f07e47ff880397ec975b4d44078103f5dfa518df5bd25aa6f54bd5e0e5a63c",
+      "method": "evaluate_offer",
+      "args": [
+        "demo-offer-conflict-v1"
+      ],
+      "status": "FINALIZED",
+      "actor": "0x69Cf4B8fD63208716E0e81B0CC5e09c7b9e8aD69",
+      "execution": "SUCCESS",
+      "votes": {
+        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "idle",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "idle",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree"
+      },
+      "leaderOnly": false,
+      "createdAt": "2026-10-16T21:01:27.013966+00:00"
+    },
+    {
+      "label": "Submit demo-offer-missing-v1",
+      "hash": "0x9bbcde3ba3f90edb8a2f18ce5e5b53c555c757bbd3b65029e29a5f69d4892541",
+      "method": "submit_offer",
+      "args": [
+        "demo-offer-missing-v1",
+        "demo-rfq-industrial-usb-hub-v1",
+        "Sample C · missing warranty",
+        "Product: industrial desktop USB hub.\nConnectivity: four USB-A data ports.\nEnclosure: aluminum metal housing.\nShipping: standard export packaging."
+      ],
+      "status": "FINALIZED",
+      "actor": "0x2366540667c280cDBE438D63a8156f3b5ebCD72B",
+      "execution": "SUCCESS",
+      "votes": {
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree"
+      },
+      "leaderOnly": false,
+      "createdAt": "2026-10-16T21:01:44.548452+00:00"
+    },
+    {
+      "label": "Evaluate demo-offer-missing-v1",
+      "hash": "0xc69ad4384bc385e18b3b2605419a4d426c56c58b872fd52b77ad89af8c572a1f",
+      "method": "evaluate_offer",
+      "args": [
+        "demo-offer-missing-v1"
+      ],
+      "status": "ACCEPTED",
+      "actor": "0x69Cf4B8fD63208716E0e81B0CC5e09c7b9e8aD69",
+      "execution": "SUCCESS",
+      "votes": {
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "idle",
+        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "idle",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
+      },
+      "leaderOnly": false,
+      "createdAt": "2026-10-16T21:01:53.991882+00:00"
+    },
+    {
+      "label": "Select compatible offer",
+      "hash": "0xfabc4bf4b539fa0f2525390cffc083219b9aeb8690199754ddb347b0de1bc500",
+      "method": "select_offer",
+      "args": [
+        "demo-rfq-industrial-usb-hub-v1",
+        "demo-offer-match-v1"
+      ],
+      "status": "ACCEPTED",
+      "actor": "0x69Cf4B8fD63208716E0e81B0CC5e09c7b9e8aD69",
+      "execution": "SUCCESS",
+      "votes": {
+        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "agree",
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "agree",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
+      },
+      "leaderOnly": false,
+      "createdAt": "2026-10-16T21:02:25.046665+00:00"
+    }
+  ],
+  "explorer": "https://explorer-studio.genlayer.com"
+}
